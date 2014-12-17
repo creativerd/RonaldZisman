@@ -55,7 +55,7 @@ body {
   font-size: 100%; }
 
 body {
-  background: #fff;
+  background: #E8E8E7;
   color: #222;
   padding: 0;
   margin: 0;
@@ -1900,11 +1900,11 @@ td {
 
 /* Default Link Styles */
 a {
-  color: #008CBA;
+  color: #1E2A3A;
   text-decoration: none;
   line-height: inherit; }
   a:hover, a:focus {
-    color: #0078a0; }
+    color: #008CBA; }
   a img {
     border: none; }
 
@@ -2002,12 +2002,12 @@ ol,
 dl {
   font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0;
   list-style-position: outside;
   font-family: inherit; }
 
 ul {
-  margin-left: 1.1rem; }
+  margin-left: 0rem; }
   ul.no-bullet {
     margin-left: 0; }
     ul.no-bullet li ul,
