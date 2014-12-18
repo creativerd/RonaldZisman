@@ -34,4 +34,39 @@ jQuery(document).ready(function($) {
 		}
 	});
 
+	/*
+	* slide
+	*/
+
+	// init work
+	// ensure there is a previous slide
+	$('.previous-slide').css('margin-left', -2500).parent().insertBefore($('.current-slide').parent());
+	// $('.previous-slide').css('margin-left', -2500).insertBefore($('.current-slide'));
+
+	$('span').on('click', function() {
+
+		var direction = $(this).data('dir'),
+				currentImg = $('.current-slide'),
+				currentIndex = currentImg.index(),
+				nextImg = $('.next-slide'),
+				prevImg = $('.previous-slide');
+
+		//nextImg.addClass('next-slide');
+		//prevImg.addClass('previous-slide');
+
+		if(direction == 'next') {
+
+			currentImg.css('margin-left' , -2500);
+			// edit classes
+			// change element index to ensure prev and next
+
+		} else {
+			prevImg.css('margin-left' , 0);
+			// edit classes
+			// change element index to ensure prev and next
+		}
+		
+
+	});
+
 });

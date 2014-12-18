@@ -2,14 +2,14 @@
 	<footer>
 		<div class="row">
 
-			<div class="header-cols large-7 small-0 columns">
+			<div class="header-cols large-7 medium-6 small-0 columns">
 				<p>Copyright © 2014 – Lorem ipsum dolor sit amet.</p>
 			</div>
 
-			<div class="header-cols large-5 small-0 columns">
+			<div class="header-cols large-5 medium-6 small-0 columns">
 				<div class="row">
 
-					<div class="large-6 columns">
+					<div class="large-6 medium-6 columns">
 						<ul class="footer-nav-ul">
 							<li class="nav-item">
 								<a href="#">Home</a>
@@ -23,7 +23,7 @@
 						</ul>
 					</div>
 
-					<div class="large-6 columns">
+					<div class="large-6 medium-6 columns">
 						<ul class="footer-nav-ul">
 							<li class="nav-item show-for-medium-up">
 								<a href="#">Articles</a>
