@@ -13,13 +13,13 @@
 
 				switch(true) {
 					case $i == 1:
-						$cl = 'current-slide';
+						$cl = 'current-slide a-bio';
 						break;
 					case $i == 2:
-						$cl = 'next-slide';
+						$cl = 'next-slide articles';
 						break;
 					case $i == 3:
-						$cl = 'previous-slide';
+						$cl = 'previous-slide us-imm';
 						break;
 					default:
 						$cl = 'slide';
@@ -31,7 +31,7 @@
 							<picture class="home-img <?php echo $cl; ?>">
 								<source srcset="<?php echo $img_obj['sizes']['pz-extra-large']; ?>" media="(min-width: 1800px)">
 								<source srcset="<?php echo $img_obj['sizes']['pz-large']; ?>" media="(min-width: 1200px)">
-								<source srcset="<?php echo $img_obj['sizes']['pz-medium']; ?>" media="(min-width: 800px)">
+								<source srcset="<?php echo $img_obj['sizes']['pz-medium']; ?>" media="(min-width: 850px)">
 								<source srcset="<?php echo $img_obj['sizes']['pz-small']; ?>" media="(min-width: 500px)">
 								<source srcset="<?php echo $img_obj['sizes']['pz-mobile']; ?>" media="(min-width: 320px)">
 								<img srcset="<?php echo $img_obj['sizes']['pz-medium']; ?>" alt="Canadian mountains covered in snow">
