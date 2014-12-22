@@ -39,10 +39,14 @@
 							
 							<div class="slide-description">
 								<div class="slide-info">
-									<!--<a href="<?php echo $link ?>;">-->
-										<h1><?php echo $title; ?></h1>
-									<!-- </a>-->
-									<p><?php echo $description; ?></p>
+										<div></div>
+										<div class="slide-text-col large-5 medium-6 columns">
+										<!--<a href="<?php echo $link ?>;">-->
+											<h1><?php echo $title; ?></h1>
+										<!-- </a>-->
+											<?php echo '<p class="slide-p-text">' . $description . '</p>'; ?>
+											<span class="slide-dots"></span>
+									</div>
 								</div>
 							</div>
 

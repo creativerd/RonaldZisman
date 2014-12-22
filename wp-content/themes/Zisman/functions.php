@@ -19,6 +19,7 @@ function pz_setup() {
 
 	remove_filter( 'the_content', 'wpautop' );
 	remove_filter( 'the_excerpt', 'wpautop' );
+	remove_filter ('acf_the_content', 'wpautop');
 
 }
 add_action('after_setup_theme', 'pz_setup');
