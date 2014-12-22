@@ -43,7 +43,7 @@
 					<div class="large-6 medium-6 small-12 columns">
 						<ul>
 							<li class="nav-item">
-								<a href="#"><i class="fa fa-star"></i>Home</a>
+								<a href="<?php echo WP_HOME; ?>"><i class="fa fa-star"></i>Home</a>
 							</li>
 							<li class="nav-item">
 								<a href="#"><i class="fa fa-star"></i>Attorney Bio</a>
@@ -57,7 +57,7 @@
 					<div class="large-6 medium-6 small-12 columns">
 						<ul>
 							<li class="nav-item">
-								<a href="#"><i class="fa fa-star"></i>Articles</a>
+								<a href="<?php echo WP_HOME; ?>/articles"><i class="fa fa-star"></i>Articles</a>
 							</li>
 							<li class="nav-item">
 								<a href="#"><i class="fa fa-star"></i>Immigration Links</a>
@@ -67,7 +67,6 @@
 							</li>
 						</ul>
 					</div>
-
 				</div>
 			</div>
 		</div>

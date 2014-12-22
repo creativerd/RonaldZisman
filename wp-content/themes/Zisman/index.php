@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+<!-- SLIDESHOW -->
 <section id="home-slideshow">
 	<div class="slides-container">
 		<?php 
@@ -58,8 +59,39 @@
 	<div>
 </section>
 
-	<span data-dir="prev">PREV</span>	
-	<span style="float:right;" data-dir="next">NEXT</span>
+<span data-dir="prev">PREV</span>	
+<span style="float:right;" data-dir="next">NEXT</span>
+
+<!-- SHORTCUTS -->
+<section id="home-shorcuts">
+	<div id="direction-shortcut">
+		<span class="square-shortcut">
+			<img style="max-width: 32px" src="<?php echo TEMPLATEPATHIO; ?>/library/images/direction-shortcut-icon.png" alt="direction arrow icon">
+			<span>DIRECTIONS</span>
+		</span>
+		<div class="shortcut-info">
+			<a href="#">
+				Click Here, 808 Nelson Street<br>
+				Vancouver, BC, V6Z 2H2<br>
+				Click Here for Directions
+			</a>
+		</div>
+	</div>
+		
+	<div id="border-times-shortcut">
+		<span class="square-shortcut">
+			<img style="max-width: 32px;" src="<?php echo TEMPLATEPATHIO; ?>/library/images/border-shortcut-icon.png" alt="clock icon">
+			<span>TIMES</span>
+		</span>
+		<div class="shortcut-info">
+			<a href="#">
+				Click Here to Check<br>
+				Citizenship amd Immigration<br>
+				Processing Dates and Case Status
+			</a>
+		</div>
+	</div>
+</section>
 
 <?php get_footer(); ?>
 

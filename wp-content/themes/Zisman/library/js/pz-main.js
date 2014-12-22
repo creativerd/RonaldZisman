@@ -1,36 +1,52 @@
 jQuery(document).ready(function($) {
 
 	// globals
-	var windowWidth;
+	// this could be just one object
+	var windowWidth,
+			currentPage;
 
 	// INIT SCRIPT
 	(function pzInit() {
 		windowWidth = ($(window).innerWidth());
 		$('picture').css('max-width', windowWidth);
 
-		// HOMEPAGE
+		// homepage
 		if($('section#home-slideshow').length != 0) {
-
-			var slides = $('picture.home-img'),
-					slideLength = slides.length;
-			$('.previous-slide').css('margin-left', -windowWidth).parent().insertBefore($('.current-slide').parent());
-			// $('.previous-slide').css('margin-left', -2500).insertBefore($('.current-slide'));
-		
-			// add dots to slides
-			slides.each(function(index) {
-				var spanContainer = $(this).parent().find('span.slide-dots');
-				for(var ii = 0; ii < slideLength; ii++) {
-					if(ii === index) {
-						$('<div class="s-dot active-s-dot"></div>').appendTo(spanContainer);
-					} else {
-						$('<div class="s-dot"></div>').appendTo(spanContainer);
-					}
-				}
-			});
+			currentPage = 'Homepage';
 		}
 
-		return windowWidth;
+		return windowWidth, currentPage;
 	}());
+
+
+	/*
+	* homepage
+	*/
+	if(currentPage == 'Homepage') {
+
+		// shortcuts interactivity
+		$('div#direction-shortcut, div#border-times-shortcut').on('click', function() {
+			$(this).find('div.shortcut-info').animate({width:'toggle'},350);
+		});
+
+		// set up slides
+		var slides = $('picture.home-img'),
+		slideLength = slides.length;
+		$('.previous-slide').css('margin-left', -windowWidth).parent().insertBefore($('.current-slide').parent());
+		// $('.previous-slide').css('margin-left', -2500).insertBefore($('.current-slide'));
+	
+		// add dots to slides
+		slides.each(function(index) {	
+			var spanContainer = $(this).parent().find('span.slide-dots');
+			for(var ii = 0; ii < slideLength; ii++) {
+				if(ii === index) {
+					$('<div class="s-dot active-s-dot"></div>').appendTo(spanContainer);
+				} else {
+					$('<div class="s-dot"></div>').appendTo(spanContainer);
+				}
+			}
+		});
+	}
 	
 	/*
 	* top nav: display icon on hover
@@ -108,8 +124,6 @@ jQuery(document).ready(function($) {
 
 		var nextImg = $('picture').eq(nextIndex);
 		var prevImg = $('picture').eq(prevIndex);
-
-		console.log(currentIndex,nextIndex, prevIndex);
 
 		$('div.slide-info').fadeOut('fast');
 
