@@ -69,8 +69,11 @@
 	<div>
 </section>
 
+<!--
 <span data-dir="prev">PREV</span>	
 <span style="float:right;" data-dir="next">NEXT</span>
+00>
+-->
 
 <!-- SHORTCUTS -->
 <section id="home-shorcuts">

@@ -22,12 +22,13 @@
 			$link = get_permalink();
 			$author = get_the_author();
 			$thumbnail_url = get_field('article_thumbnail')['sizes']['post-thumbnail'];
+			$publishing_date = get_the_date();
 
-			echo '<article class="large-4 medium-6 small-12 columns">';
-			echo '<a href="' . $link . '"><img src="' . $thumbnail_url . '"></a>';
+			echo '<article class="large-4 medium-4 small-12 columns">';
+			echo '<a href="' . $link . '"><img class="article-thumb" src="' . $thumbnail_url . '"></a>';
 			echo '<a href="' . $link . '"><h3 class="article-title">' . $title . '</h3></a>';
-			echo '<h5>by ' . $author . '</h5>';
-			echo '<a href="' . $link . '"><h3>Read More</h3></a>';
+			echo '<h5 class="article-author">by ' . $author . ' | ' . $publishing_date . '</h5>';
+			echo '<a class="go-to-article" href="' . $link . '"><h4>Read Article</h3></a>';
 			echo '</article>';
 		}
 	}

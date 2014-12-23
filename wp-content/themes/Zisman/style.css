@@ -13,6 +13,22 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 
+@font-face{
+font-family:"HelveticaNeueW01-45Ligh";
+src:url("library/fonts/ae1656aa-5f8f-4905-aed0-93e667bd6e4a.eot?#iefix");
+src:url("library/fonts/ae1656aa-5f8f-4905-aed0-93e667bd6e4a.eot?#iefix") format("eot"),url("library/fonts/530dee22-e3c1-4e9f-bf62-c31d510d9656.woff") format("woff"),url("library/fonts/688ab72b-4deb-4e15-a088-89166978d469.ttf") format("truetype"),url("library/fonts/7816f72f-f47e-4715-8cd7-960e3723846a.svg#7816f72f-f47e-4715-8cd7-960e3723846a") format("svg");
+}
+@font-face{
+font-family:"HelveticaNeueW01-55Roma";
+src:url("library/fonts/b7693a83-b861-4aa6-85e0-9ecf676bc4d6.eot?#iefix");
+src:url("library/fonts/b7693a83-b861-4aa6-85e0-9ecf676bc4d6.eot?#iefix") format("eot"),url("library/fonts/bcf54343-d033-41ee-bbd7-2b77df3fe7ba.woff") format("woff"),url("library/fonts/b0ffdcf0-26da-47fd-8485-20e4a40d4b7d.ttf") format("truetype"),url("library/fonts/da09f1f1-062a-45af-86e1-2bbdb3dd94f9.svg#da09f1f1-062a-45af-86e1-2bbdb3dd94f9") format("svg");
+}
+@font-face{
+font-family:"HelveticaNeueW01-77BdCn_692722";
+src:url("library/fonts/83d5bc89-af33-46a9-8fe3-15d87784f50e.eot?#iefix");
+src:url("library/fonts/83d5bc89-af33-46a9-8fe3-15d87784f50e.eot?#iefix") format("eot"),url("library/fonts/102ab74c-0e84-4fe5-a17a-b20fb643591a.woff") format("woff"),url("library/fonts/1d146b29-55e2-485b-96aa-5cb628e7e9eb.ttf") format("truetype"),url("library/fonts/d90b3358-e1e2-4abb-ba96-356983a54c22.svg#d90b3358-e1e2-4abb-ba96-356983a54c22") format("svg");
+}
+
 html {
   font-family: sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
@@ -214,7 +230,7 @@ li {
 *********/
 header {
 	background-color: #FFF;
-	height: 160px;
+	height: auto;
 	padding: 30px;
 	-webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;   
@@ -223,6 +239,10 @@ header {
 
 .header-cols {
 	padding: 0 !important;
+}
+
+li.nav-item>a {
+	font-family: 'HelveticaNeueW01-45Ligh' !important;
 }
 
 li.nav-item>a>i {
@@ -470,6 +490,34 @@ picture.home-img {
 }
 
 /*********
+* PAGE BANNER
+*********/
+
+section#page-banner {
+	position: relative;
+}
+
+h2#banner-title {
+	position: absolute;
+	margin-top: -85px;
+	color: #FFF;
+	font-family: 'HelveticaNeueW01-77BdCn_692722';
+	font-size: 44px;
+}
+
+@media only screen and (min-width : 601px) and (max-width : 1000px) {
+	h2#banner-title {
+		padding-left: 30px;
+	}
+}
+
+@media only screen and (min-width : 320px) and (max-width : 600px) {
+	h2#banner-title {
+		padding-left: 20px;
+	}
+}
+
+/*********
 * ARTICLES ARCHIVE
 *********/
 
@@ -486,9 +534,93 @@ picture.home-img {
 	min-height: 370px;
 }
 
+img.article-thumb {
+	width: 100%;
+}
+
 h3.article-title {
-	font-size: 20px;
+	font-family: 'HelveticaNeueW01-77BdCn_692722' !important;
+	font-size: 20px !important;
+	line-height: 1.3 !important;
 	color: #5C5C5B;
+	margin-bottom: 4px;
+}
+
+h5.article-author {
+	font-family: 'HelveticaNeueW01-55Roma' !important;
+	font-size: 12px !important;
+	line-height: 1.3 !important;
+	color: #5C5C5C;
+}
+
+a.go-to-article>h4 {
+	font-family: 'HelveticaNeueW01-77BdCn_692722' !important;
+	font-size: 16px !important;
+	line-height: 1.3 !important;
+	color: #1E2A3A;
+}
+
+a.go-to-article:link {
+	color: #1E2A3A;
+}
+
+a.go-to-article:hover, a.go-to-article>h4:hover {
+	color: #197194 !important;
+}
+
+@media only screen and (min-width : 601px) and (max-width : 1000px) {
+	#all-articles-container article {
+		margin-bottom: 20px;
+		min-height: 315px;
+	}
+}
+
+@media only screen and (min-width : 320px) and (max-width : 600px) {
+	#all-articles-container article {
+		margin-bottom: 20px;
+		min-height: initial;
+	}
+}
+
+/*********
+* ARTICLES SINGLE
+*********/
+
+#single-article-wrapper {
+	height: 100%;
+	background-color: #FFF;
+	padding-top: 30px;
+}
+
+#single-article-wrapper article {
+ 	padding-left: 0 !important;
+ 	padding-bottom: 60px;
+ }
+
+ p.article-date, p.article-extra-info {
+ 	font-family: 'HelveticaNeueW01-45Ligh' !important;
+ 	color: #5C5C5C;
+ 	font-size: 14px !important;
+ 	margin-bottom: 0px;
+ 	line-height: 1.3;
+ }
+
+ p.article-content {
+ 	font-family: 'HelveticaNeueW01-55Roma' !important;
+ 	color: #5C5C5C;
+ 	font-size: 16px !important;
+ }
+
+h2.article-title {
+	font-family: 'HelveticaNeueW01-77BdCn_692722' !important;
+	font-size: 28px !important;
+	line-height: 1.3 !important;
+	color: #1E2A3A;
+	margin-bottom: 0px !important;
+}
+
+.article-head {
+	margin-bottom: 25px;
 }
 
 /*********
@@ -497,8 +629,10 @@ h3.article-title {
 
 footer {
 	background-color: #E8E8E7;
+	min-height: 160px;
 	height: auto;
 	padding: 30px;
+	font-family: 'HelveticaNeueW01-45Ligh' !important;
 }
 
 .footer-cols {

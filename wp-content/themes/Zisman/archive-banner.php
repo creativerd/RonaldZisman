@@ -26,11 +26,19 @@
 			$banner_loop->the_post();
 
 			$banner_id = get_the_ID();
-			$banner_url = get_field('banner_image', $banner_id)['sizes']['post-thumbnail'];
+			$banner_url = get_field('banner_image', $banner_id)['sizes'];
 
 			echo '<section id="page-banner">';
-			echo '<img src="' . $banner_url . '" >';
-			echo '<h2>' . $post_type_label .'</h2>';
+			echo '<picture>
+							<source srcset="' . $banner_url['pz-banner-extra-large'] . '" media="(min-width: 1800px)">
+							<source srcset="' . $banner_url['pz-banner-large'] . '" media="(min-width: 1200px)">
+							<source srcset="' . $banner_url['pz-banner-medium'] . '" media="(min-width: 850px)">
+							<source srcset="' . $banner_url['pz-banner-small'] . '" media="(min-width: 500px)">
+							<img 		srcset="' . $banner_url['pz-banner-medium'] . '">
+						</picture>';
+			echo '<div class="row">';
+			echo '<h2 id="banner-title">' . $post_type_label .'</h2>';
+			echo '</div>';
 			echo '</section>';
 		}
 	}

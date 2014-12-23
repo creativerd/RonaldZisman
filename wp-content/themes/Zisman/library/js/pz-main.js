@@ -51,14 +51,14 @@ jQuery(document).ready(function($) {
 		// init slideshow
 		var homeSlideshow = new pzSlideshow($('picture.home-img'), $('div.slide-info'));
 
-		$('span').on('click', function() {
+		$('span.SLIDESHOW-NAVIGATOR').on('click', function() {
 			var $this = $(this);
 			homeSlideshow.slide($this);
 		});	
 
-		//setTimeout(function() {
-		//	homeSlideshow.autoSlide();
-		//}, 2000);
+		setTimeout(function() {
+			homeSlideshow.autoSlide();
+		}, 2000);
 		
 	}
 	
@@ -111,19 +111,15 @@ jQuery(document).ready(function($) {
 		}
 
 		$('picture').css('max-width', windowWidth);
-		$('picture').eq(0).css(previousReset);
+		$('picture.home-img').eq(0).css(previousReset);
 
 		setTimeout(function() {
-			$('picture').eq(0).css(removeReset);
+			$('picture.home-img').eq(0).css(removeReset);
 		}, 2000);
 
 		return windowWidth;
 
 	});
-
-	/*
-	* slideshow
-	*/	
 
 	/*
 	* SLIDESHOW CONSTRUCTOR
