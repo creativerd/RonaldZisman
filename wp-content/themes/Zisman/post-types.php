@@ -72,7 +72,7 @@ function rz_articles_post_type() {
 		'rewrite'            => array( 'slug' => 'articles' ),
 		'capability_type'    => 'post',
 		'has_archive'        => true,
-		'hierarchical'       => false,
+		'hierarchical'       => true,
 		'menu_position'      => null,
 		'supports'           => array( 'title' )
 	);
@@ -80,5 +80,44 @@ function rz_articles_post_type() {
 	register_post_type( 'rz_articles', $args );
 }
 add_action( 'init', 'rz_articles_post_type' );
+
+/*
+* Articles banner post type
+*/
+function rz_articles_banner_post_type() {
+  $labels = array(
+    'name'              => 'Articles Banner Image',
+    'singular_name'     => 'Articles Banner Image',
+    'add_new'           => '',
+    'add_new_item'      => 'Add Articles Banner Image',
+    'edit_item'         => 'Edit Articles Banner',
+    'new_item'          => 'New Articles Banner Image',
+    'all_items'         => 'Articles Banner Image',
+    'view_item'         => 'View Articles Banner Image',
+    'search_items'      => 'Search Articles Banner Image',
+    'not_found'         =>  'No Articles Banner Image found',
+    'not_found_in_trash' => 'No Articles Banner Image found in Trash', 
+    'parent_item_colon' => '',
+    'menu_name'         => 'Articles Banner Image'
+  );
+
+  $args = array(
+    'labels'                => $labels,
+    'public'                => true,
+    'publicly_queryable'    => true,
+    'show_ui'               => true, 
+    'show_in_menu'          => 'edit.php?post_type=rz_articles', 
+    'query_var'             => true,
+    'rewrite'               => array( 'slug' => 'articles-banner' ),
+    'capability_type'       => 'post',
+    'has_archive'           => true, 
+    'hierarchical'          => true,
+    'menu_position'         => null,
+    'supports'              => array( 'title' )
+  ); 
+
+  register_post_type( 'rz_articles_banner', $args );
+}
+add_action( 'init', 'rz_articles_banner_post_type' );
 
 ?>

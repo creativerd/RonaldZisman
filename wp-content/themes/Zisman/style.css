@@ -478,6 +478,19 @@ picture.home-img {
 	padding: 30px 15px;
 }
 
+#all-articles-container>.row {
+	max-width: 980px;
+}
+
+#all-articles-container article {
+	min-height: 370px;
+}
+
+h3.article-title {
+	font-size: 20px;
+	color: #5C5C5B;
+}
+
 /*********
 * FOOTER
 *********/

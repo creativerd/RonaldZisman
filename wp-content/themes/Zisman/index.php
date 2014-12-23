@@ -5,8 +5,18 @@
 	<div class="slides-container">
 		<?php 
 			$home_id = 8;
+			$totalSlides = 0;
 			// get home slides 
-			for($i = 1; $i < 6; $i++) {
+			for($jj = 1; $jj < 6; $jj++) {
+				$current_t = get_field('slide_title_' . $jj, $home_id);
+				$current_i =get_field('slide_image_' . $jj, $home_id);
+
+				if(!empty($current_t) && !empty($current_i)) {
+					$totalSlides++;
+				}
+			}
+
+			for($i = 1; $i <= $totalSlides; $i++) {
 				$title = get_field('slide_title_' . $i, $home_id);
 				$link = get_field('slide_link_' . $i, $home_id);
 				$description = get_field('slide_description_' . $i, $home_id);
@@ -14,13 +24,13 @@
 
 				switch(true) {
 					case $i == 1:
-						$cl = 'current-slide a-bio';
+						$cl = 'current-slide';
 						break;
 					case $i == 2:
-						$cl = 'next-slide articles';
+						$cl = 'next-slide';
 						break;
-					case $i == 3:
-						$cl = 'previous-slide us-imm';
+					case $i == $totalSlides:
+						$cl = 'previous-slide';
 						break;
 					default:
 						$cl = 'slide';

@@ -13,6 +13,11 @@ function pz_setup() {
 	add_image_size( 'pz-large', 1800, 1314, true );
 	add_image_size( 'pz-extra-large', 2500, 1875, true );
 
+	add_image_size( 'pz-banner-extra-large', 2500, 832, true );
+	add_image_size( 'pz-banner-large', 1800, 600, true );
+	add_image_size( 'pz-banner-medium', 1200, 400, true );
+	add_image_size( 'pz-small-large', 800, 266, true );
+
 	add_theme_support('html5', array(
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
 	));
@@ -56,4 +61,16 @@ add_action('wp_enqueue_scripts', 'md_footer_enqueue_scripts');
 **/
 include_once('post-types.php');
 
+/*
+add_action('admin_menu', 'register_my_custom_submenu_page');
+function register_my_custom_submenu_page() {
+	add_submenu_page( 'rz_articles', 'articles-banner', 'Banner', 'manage_options', 'articles-banner', 'my_custom_submenu_page_callback' );
+}
+function my_custom_submenu_page_callback() {
+	
+	echo '<div class="wrap"><div id="icon-tools" class="icon32"></div>';
+		echo '<h2>My Custom Submenu Page</h2>';
+	echo '</div>';
+}
+*/
 ?>

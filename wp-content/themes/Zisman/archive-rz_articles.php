@@ -1,5 +1,9 @@
 <?php get_header(); ?>
 
+<?php $page_id = $post->ID; ?>
+
+<?php include(locate_template('archive-banner.php')); ?>
+
 <section id="all-articles-container">
 	<div class="row">
 	<?php 
@@ -16,10 +20,15 @@
 
 			$title = get_the_title();
 			$link = get_permalink();
+			$author = get_the_author();
+			$thumbnail_url = get_field('article_thumbnail')['sizes']['post-thumbnail'];
 
-			echo '<div class="large-4 medium-6 small-12 columns">';
-			echo '<a href="' . $link . '"><h3>' . $title . '</h3></a>';
-			echo '</div>';
+			echo '<article class="large-4 medium-6 small-12 columns">';
+			echo '<a href="' . $link . '"><img src="' . $thumbnail_url . '"></a>';
+			echo '<a href="' . $link . '"><h3 class="article-title">' . $title . '</h3></a>';
+			echo '<h5>by ' . $author . '</h5>';
+			echo '<a href="' . $link . '"><h3>Read More</h3></a>';
+			echo '</article>';
 		}
 	}
 
