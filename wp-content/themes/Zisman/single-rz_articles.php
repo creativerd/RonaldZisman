@@ -9,6 +9,7 @@ if(have_posts()) {
 
 		the_post();
 		
+		$current_post_id = $post->ID;
 		$post_title = get_the_title();
 		$article_date = get_field('article_date');
 		$article_extrainfo = get_field('article_extra_info');
@@ -33,7 +34,7 @@ if(have_posts()) {
 
 		echo '<div id="single-article-wrapper">';
 		echo 		'<div class="row">';
-		echo 				'<article class="large-8 medium-9 small-12 columns">';
+		echo 				'<article class="main-post large-8 medium-8 small-12 columns">';
 
 		echo 						'<div class="article-head">';
 		echo 							'<h2 class="article-title">' . $post_title . '</h2>';
@@ -50,7 +51,7 @@ if(have_posts()) {
 		echo 						'<p class="article-content">' . $the_post_content . '</p>';
 		echo 				'</article>';
 
-		echo 				'<aside class="large-4 medium-3 small-12 columns">';
+		echo 				'<aside id="similar-posts" class="large-4 medium-4 small-12 columns">';
 								include(locate_template('article-aside.php'));
 		echo 				'</aside>';
 		echo 		'</div>';

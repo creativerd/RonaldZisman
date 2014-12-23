@@ -592,12 +592,12 @@ a.go-to-article:hover, a.go-to-article>h4:hover {
 	padding-top: 30px;
 }
 
-#single-article-wrapper article {
+#single-article-wrapper article.main-post {
  	padding-left: 0 !important;
  	padding-bottom: 60px;
  }
 
- p.article-date, p.article-extra-info {
+ p.article-date, p.article-extra-info, p.aside-post-info {
  	font-family: 'HelveticaNeueW01-45Ligh' !important;
  	color: #5C5C5C;
  	font-size: 14px !important;
@@ -621,6 +621,100 @@ h2.article-title {
 
 .article-head {
 	margin-bottom: 25px;
+}
+
+aside#similar-posts {
+	padding-right: initial;
+}
+
+article.aside-post {
+	float: left;
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+	border-bottom: 1px dashed #9E9E9E;
+	padding-right: 10px;
+}
+
+.aside-post>.img-col {
+	padding: 0 !important;
+}
+
+.aside-post h4, .aside-post a, a.back-to-parent {
+	font-family: 'HelveticaNeueW01-77BdCn_692722' !important;
+	color: #5C5C5B;
+	font-size: 16px !important;
+	line-height: 1.3 !important;
+	margin: 0 0 2px !important;
+}
+
+.aside-post a, a.back-to-parent {
+	color: #1E2A3A;
+}
+
+a.back-to-parent {
+	text-decoration: underline;
+	margin-left: -15px !important;
+}
+
+.aside-post a:hover, a.back-to-parent:hover {
+	color: #197194 !important;
+}
+
+p.aside-post-info {
+ 	font-size: 12px !important;
+}
+
+p.aside-post-info:last-of-type {
+	margin-bottom: 6px;
+}
+
+@media only screen and (min-width : 601px) and (max-width : 1000px) { 
+	#single-article-wrapper article.main-post {
+		padding-left: 30px !important;
+	}
+
+	.aside-post-container {
+		margin-right: 10px !important;
+	}
+
+}
+
+@media only screen and (min-width : 320px) and (max-width : 600px) {
+
+	.aside-post-container {
+		margin-left: 15px !important;
+		margin-right: 15px !important;
+	}
+
+	#single-article-wrapper article.main-post {
+		padding-left: 30px !important;
+	}
+
+	#single-article-wrapper article.main-post {
+		padding-bottom: 30px;
+	}
+
+	#similar-posts {
+		background-color: #F3F3F3;
+		padding-right: 15px;
+	}
+
+	.aside-post {
+		padding-top: 15px;
+	}
+
+	.aside-post:first-of-type {
+		padding-top: 30px;
+	}
+
+	article.aside-post {
+		margin-bottom: 0;
+	}
+
+	a.back-to-parent {
+		display: block !important;
+		margin: 15px !important;
+	}
 }
 
 /*********
