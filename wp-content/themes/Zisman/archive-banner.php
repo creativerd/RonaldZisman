@@ -8,10 +8,10 @@
 		case 'Articles':
 			$banner_post_type = 'rz_articles_banner';
 			break;
-		case 'Us Immigration':
-			$banner_post_type = '';
+		case 'Attorney Bio':
+			$banner_post_type = 'rz_bio_banner';
 			break;
-		default : 'alfio';
+		default : '';
 	}
 
 	$banner_args = array(

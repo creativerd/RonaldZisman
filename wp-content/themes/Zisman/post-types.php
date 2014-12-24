@@ -120,4 +120,85 @@ function rz_articles_banner_post_type() {
 }
 add_action( 'init', 'rz_articles_banner_post_type' );
 
+
+/**
+ * Bio post type.
+ **/
+function rz_bio_post_type() {
+	$labels = array(
+		'name'               => _x( 'Attorney Bio', 'post type general name' ),
+		'singular_name'      => _x( 'Attorney Bio', 'post type singular name' ),
+		'menu_name'          => _x( 'Attorney Bio', 'admin menu' ),
+		'name_admin_bar'     => _x( 'Attorney Bio', 'add new on admin bar' ),
+		'add_new'            => _x( 'Add New Attorney Bio', 'Biography' ),
+		'add_new_item'       => __( 'Add New Attorney Bio' ),
+		'new_item'           => __( 'New Attorney Bio' ),
+		'edit_item'          => __( 'Edit Attorney Bio' ),
+		'view_item'          => __( 'View Attorney Bio' ),
+		'all_items'          => __( 'Edit Attorney Bio' ),
+		'search_items'       => __( 'Search Attorney Bio' ),
+		'parent_item_colon'  => __( 'Parent Attorney Bio:' ),
+		'not_found'          => __( 'No Attorney Bio found.' ),
+		'not_found_in_trash' => __( 'No Attorney Bio found in Trash.' )
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'bio' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => true,
+		'menu_position'      => null,
+		'supports'           => array( 'title' )
+	);
+
+	register_post_type( 'rz_bio', $args );
+}
+add_action( 'init', 'rz_bio_post_type' );
+
+/*
+* Bio banner post type
+*/
+function rz_bio_banner_post_type() {
+  $labels = array(
+    'name'              => 'Biography Banner Image',
+    'singular_name'     => 'Biography Banner Image',
+    'add_new'           => '',
+    'add_new_item'      => 'Add Biography Banner Image',
+    'edit_item'         => 'Edit Biography Banner',
+    'new_item'          => 'New Biography Banner Image',
+    'all_items'         => 'Biography Banner Image',
+    'view_item'         => 'View Biography Banner Image',
+    'search_items'      => 'Search Biography Banner Image',
+    'not_found'         =>  'No Biography Banner Image found',
+    'not_found_in_trash' => 'No Biography Banner Image found in Trash', 
+    'parent_item_colon' => '',
+    'menu_name'         => 'Biography Banner Image'
+  );
+
+  $args = array(
+    'labels'                => $labels,
+    'public'                => true,
+    'publicly_queryable'    => true,
+    'show_ui'               => true, 
+    'show_in_menu'          => 'edit.php?post_type=rz_bio', 
+    'query_var'             => true,
+    'rewrite'               => array( 'slug' => 'bio-banner' ),
+    'capability_type'       => 'post',
+    'has_archive'           => true, 
+    'hierarchical'          => true,
+    'menu_position'         => null,
+    'supports'              => array( 'title' )
+  ); 
+
+  register_post_type( 'rz_bio_banner', $args );
+}
+add_action( 'init', 'rz_bio_banner_post_type' );
+
+
 ?>

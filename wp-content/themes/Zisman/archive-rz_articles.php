@@ -4,7 +4,7 @@
 
 <?php include(locate_template('archive-banner.php')); ?>
 
-<section id="all-articles-container">
+<section id="content-wrapper">
 	<div class="row">
 	<?php 
 	$args = array(

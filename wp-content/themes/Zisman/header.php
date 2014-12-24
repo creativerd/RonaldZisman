@@ -46,7 +46,7 @@
 								<a href="<?php echo WP_HOME; ?>"><i class="fa fa-star"></i>Home</a>
 							</li>
 							<li class="nav-item">
-								<a href="#"><i class="fa fa-star"></i>Attorney Bio</a>
+								<a href="<?php echo WP_HOME; ?>/bio"><i class="fa fa-star"></i>Attorney Bio</a>
 							</li>
 							<li class="nav-item">
 								<a href="#"><i class="fa fa-star"></i>U.S. Immigration</a>
