@@ -11,6 +11,12 @@
 		case 'Attorney Bio':
 			$banner_post_type = 'rz_bio_banner';
 			break;
+		case 'Immigration Links':
+			$banner_post_type = 'rz_immigrationbanner';
+			break;
+		case 'US Immigration':
+			$banner_post_type = 'rz_us_immig_banner';
+			break;
 		default : '';
 	}
 

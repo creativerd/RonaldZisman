@@ -49,7 +49,7 @@
 								<a href="<?php echo WP_HOME; ?>/bio"><i class="fa fa-star"></i>Attorney Bio</a>
 							</li>
 							<li class="nav-item">
-								<a href="#"><i class="fa fa-star"></i>U.S. Immigration</a>
+								<a href="<?php echo WP_HOME; ?>/us-immigration"><i class="fa fa-star"></i>U.S. Immigration</a>
 							</li>
 						</ul>
 					</div>
@@ -60,7 +60,7 @@
 								<a href="<?php echo WP_HOME; ?>/articles"><i class="fa fa-star"></i>Articles</a>
 							</li>
 							<li class="nav-item">
-								<a href="#"><i class="fa fa-star"></i>Immigration Links</a>
+								<a href="<?php echo WP_HOME; ?>/immigration-links"><i class="fa fa-star"></i>Immigration Links</a>
 							</li>
 							<li class="nav-item">
 								<a href="#"><i class="fa fa-star"></i>Contact</a>

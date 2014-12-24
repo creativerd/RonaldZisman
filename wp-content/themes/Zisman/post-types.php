@@ -201,4 +201,164 @@ function rz_bio_banner_post_type() {
 add_action( 'init', 'rz_bio_banner_post_type' );
 
 
+/**
+ * Immigration Links post type.
+ **/
+function rz_immigration_links_post_type() {
+	$labels = array(
+		'name'               => _x( 'Immigration Links', 'post type general name' ),
+		'singular_name'      => _x( 'Immigration Links', 'post type singular name' ),
+		'menu_name'          => _x( 'Immigration Links', 'admin menu' ),
+		'name_admin_bar'     => _x( 'Immigration Links', 'add new on admin bar' ),
+		'add_new'            => _x( 'Add New Immigration Links', 'Immigration Links' ),
+		'add_new_item'       => __( 'Add New Immigration Links' ),
+		'new_item'           => __( 'New Immigration Links' ),
+		'edit_item'          => __( 'Edit Immigration Links' ),
+		'view_item'          => __( 'View Immigration Links' ),
+		'all_items'          => __( 'Edit Immigration Links' ),
+		'search_items'       => __( 'Search Immigration Links' ),
+		'parent_item_colon'  => __( 'Parent Immigration Links:' ),
+		'not_found'          => __( 'No Immigration Links found.' ),
+		'not_found_in_trash' => __( 'No Immigration Links found in Trash.' )
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'immigration-links' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => true,
+		'menu_position'      => null,
+		'supports'           => array( 'title' )
+	);
+
+	register_post_type( 'rz_immigration', $args );
+}
+add_action( 'init', 'rz_immigration_links_post_type' );
+
+/*
+* Immigration Links banner post type
+*/
+function rz_immigration_links_banner_post_type() {
+  $labels = array(
+    'name'              => 'Immigration Links Banner Image',
+    'singular_name'     => 'Immigration Links Banner Image',
+    'add_new'           => '',
+    'add_new_item'      => 'Add Immigration Links Banner Image',
+    'edit_item'         => 'Edit Immigration Links Banner',
+    'new_item'          => 'New Immigration Links Banner Image',
+    'all_items'         => 'Immigration Links Banner Image',
+    'view_item'         => 'View Immigration Links Banner Image',
+    'search_items'      => 'Search Immigration Links Banner Image',
+    'not_found'         =>  'No Immigration Links Banner Image found',
+    'not_found_in_trash' => 'No Immigration Links Banner Image found in Trash', 
+    'parent_item_colon' => '',
+    'menu_name'         => 'Immigration Links Banner Image'
+  );
+
+  $args = array(
+    'labels'                => $labels,
+    'public'                => true,
+    'publicly_queryable'    => true,
+    'show_ui'               => true, 
+    'show_in_menu'          => 'edit.php?post_type=rz_immigration', 
+    'query_var'             => true,
+    'rewrite'               => array( 'slug' => 'immigration-banner' ),
+    'capability_type'       => 'post',
+    'has_archive'           => true, 
+    'hierarchical'          => true,
+    'menu_position'         => null,
+    'supports'              => array( 'title' )
+  ); 
+
+  register_post_type( 'rz_immigrationbanner', $args );
+}
+add_action( 'init', 'rz_immigration_links_banner_post_type' );
+
+
+/**
+* US Immigration  post type.
+**/
+function rz_us_immigration_post_type() {
+	$labels = array(
+		'name'               => _x( 'US Immigration', 'post type general name' ),
+		'singular_name'      => _x( 'US Immigration', 'post type singular name' ),
+		'menu_name'          => _x( 'US Immigration', 'admin menu' ),
+		'name_admin_bar'     => _x( 'US Immigration', 'add new on admin bar' ),
+		'add_new'            => _x( 'Add New US Immigration', 'US Immigration' ),
+		'add_new_item'       => __( 'Add New US Immigration' ),
+		'new_item'           => __( 'New US Immigration' ),
+		'edit_item'          => __( 'Edit US Immigration' ),
+		'view_item'          => __( 'View US Immigration' ),
+		'all_items'          => __( 'Edit US Immigration' ),
+		'search_items'       => __( 'Search US Immigration' ),
+		'parent_item_colon'  => __( 'Parent US Immigration:' ),
+		'not_found'          => __( 'No US Immigration found.' ),
+		'not_found_in_trash' => __( 'No US Immigration found in Trash.' )
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'us-immigration' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => true,
+		'menu_position'      => null,
+		'supports'           => array( 'title' )
+	);
+
+	register_post_type( 'rz_us_immigration', $args );
+}
+add_action( 'init', 'rz_us_immigration_post_type' );
+
+/*
+* US Immigration banner post type
+*/
+function rz_us_immigration_banner_post_type() {
+  $labels = array(
+    'name'              => 'US Immigration Banner Image',
+    'singular_name'     => 'US Immigration Banner Image',
+    'add_new'           => '',
+    'add_new_item'      => 'Add US Immigration Banner Image',
+    'edit_item'         => 'Edit US Immigration Banner',
+    'new_item'          => 'New US Immigration Banner Image',
+    'all_items'         => 'US Immigration Banner Image',
+    'view_item'         => 'View US Immigration Banner Image',
+    'search_items'      => 'Search US Immigration Banner Image',
+    'not_found'         =>  'No US Immigration Banner Image found',
+    'not_found_in_trash' => 'No US Immigration Banner Image found in Trash', 
+    'parent_item_colon' => '',
+    'menu_name'         => 'US Immigration Banner Image'
+  );
+
+  $args = array(
+    'labels'                => $labels,
+    'public'                => true,
+    'publicly_queryable'    => true,
+    'show_ui'               => true, 
+    'show_in_menu'          => 'edit.php?post_type=rz_us_immigration', 
+    'query_var'             => true,
+    'rewrite'               => array( 'slug' => 'us-immigration-banner' ),
+    'capability_type'       => 'post',
+    'has_archive'           => true, 
+    'hierarchical'          => true,
+    'menu_position'         => null,
+    'supports'              => array( 'title' )
+  ); 
+
+  register_post_type( 'rz_us_immig_banner', $args );
+}
+add_action( 'init', 'rz_us_immigration_banner_post_type' );
+
+
 ?>
