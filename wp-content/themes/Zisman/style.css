@@ -576,10 +576,25 @@ a.go-to-article:hover, a.go-to-article>h4:hover {
 }
 
 @media only screen and (min-width : 320px) and (max-width : 600px) {
+
+	#all-articles-container {
+		padding: 30px 20px;
+	}
+
 	#all-articles-container article {
 		margin-bottom: 20px;
 		min-height: initial;
+		padding: 0;
 	}
+
+	h2#banner-title {
+		position: absolute;
+		margin-top: -65px;
+		color: #FFF;
+		font-family: 'HelveticaNeueW01-77BdCn_692722';
+		font-size: 36px;
+	}
+
 }
 
 /*********
@@ -681,13 +696,17 @@ p.aside-post-info:last-of-type {
 
 @media only screen and (min-width : 320px) and (max-width : 600px) {
 
+	#single-article-wrapper {
+		padding-top: 20px;
+	}
+
 	.aside-post-container {
-		margin-left: 15px !important;
+		margin-left: 5px !important;
 		margin-right: 15px !important;
 	}
 
 	#single-article-wrapper article.main-post {
-		padding-left: 30px !important;
+		padding-left: 20px !important;
 	}
 
 	#single-article-wrapper article.main-post {
@@ -709,6 +728,10 @@ p.aside-post-info:last-of-type {
 
 	article.aside-post {
 		margin-bottom: 0;
+	}
+
+	.article-head {
+		margin-bottom: 15px;
 	}
 
 	a.back-to-parent {
