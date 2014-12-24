@@ -17,6 +17,8 @@
 	<![endif]-->
 	<link rel="stylesheet" href="<?php echo TEMPLATEPATHIO; ?>/style.css" type="text-css" media="all">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 	<?php wp_head(); ?>
 </head>
 
@@ -42,13 +44,13 @@
 
 					<div class="large-6 medium-6 small-12 columns">
 						<ul>
-							<li class="nav-item">
+							<li class="nav-item" data-page="homepage">
 								<a href="<?php echo WP_HOME; ?>"><i class="fa fa-star"></i>Home</a>
 							</li>
-							<li class="nav-item">
+							<li class="nav-item" data-page="attorney-bio">
 								<a href="<?php echo WP_HOME; ?>/bio"><i class="fa fa-star"></i>Attorney Bio</a>
 							</li>
-							<li class="nav-item">
+							<li class="nav-item" data-page="us-immigration">
 								<a href="<?php echo WP_HOME; ?>/us-immigration"><i class="fa fa-star"></i>U.S. Immigration</a>
 							</li>
 						</ul>
@@ -56,14 +58,14 @@
 
 					<div class="large-6 medium-6 small-12 columns">
 						<ul>
-							<li class="nav-item">
+							<li class="nav-item" data-page="articles">
 								<a href="<?php echo WP_HOME; ?>/articles"><i class="fa fa-star"></i>Articles</a>
 							</li>
-							<li class="nav-item">
+							<li class="nav-item" data-page="immigration-links">
 								<a href="<?php echo WP_HOME; ?>/immigration-links"><i class="fa fa-star"></i>Immigration Links</a>
 							</li>
-							<li class="nav-item">
-								<a href="#"><i class="fa fa-star"></i>Contact</a>
+							<li class="nav-item" data-page="contact">
+								<a href="<?php echo WP_HOME; ?>/contact"><i class="fa fa-star"></i>Contact</a>
 							</li>
 						</ul>
 					</div>

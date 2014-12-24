@@ -4,7 +4,7 @@
 
 <?php include(locate_template('archive-banner.php')); ?>
 
-<section id="content-wrapper">
+<section id="content-wrapper" class="attorney-bio-wrapper">
 	<div class="row">
 		<?php 
 		$args = array(

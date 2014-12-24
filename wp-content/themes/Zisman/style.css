@@ -821,6 +821,13 @@ p.aside-post-info:last-of-type {
 	}
 }
 
+/*********
+* CONTACT
+*********/
+
+#page-banner.embedded-map {
+	height: 350px;
+}
 
 /*********
 * FOOTER

@@ -282,7 +282,7 @@ add_action( 'init', 'rz_immigration_links_banner_post_type' );
 
 
 /**
-* US Immigration  post type.
+* US Immigration post type.
 **/
 function rz_us_immigration_post_type() {
 	$labels = array(
@@ -360,5 +360,45 @@ function rz_us_immigration_banner_post_type() {
 }
 add_action( 'init', 'rz_us_immigration_banner_post_type' );
 
+
+/**
+* Contact post type.
+**/
+function rz_contact_post_type() {
+	$labels = array(
+		'name'               => _x( 'Contact', 'post type general name' ),
+		'singular_name'      => _x( 'Contact', 'post type singular name' ),
+		'menu_name'          => _x( 'Contact', 'admin menu' ),
+		'name_admin_bar'     => _x( 'Contact', 'add new on admin bar' ),
+		'add_new'            => _x( 'Add New Contact', 'Contact' ),
+		'add_new_item'       => __( 'Add New Contact' ),
+		'new_item'           => __( 'New Contact' ),
+		'edit_item'          => __( 'Edit Contact' ),
+		'view_item'          => __( 'View Contact' ),
+		'all_items'          => __( 'Edit Contact' ),
+		'search_items'       => __( 'Search Contact' ),
+		'parent_item_colon'  => __( 'Parent Contact:' ),
+		'not_found'          => __( 'No Contact found.' ),
+		'not_found_in_trash' => __( 'No Contact found in Trash.' )
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'contact' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => true,
+		'menu_position'      => null,
+		'supports'           => array( 'title' )
+	);
+
+	register_post_type( 'rz_contact', $args );
+}
+add_action( 'init', 'rz_contact_post_type' );
 
 ?>

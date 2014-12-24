@@ -19,7 +19,7 @@ if(have_posts()) {
 		$post_type_obj = get_post_type_object($post_type_name);
 		$post_type_label = $post_type_obj->labels->name; 
 
-		echo '<section id="page-banner">';
+		echo '<section id="page-banner" class="articles-wrapper">';
 			echo '<picture>
 							<source srcset="' . $post_banner['pz-banner-extra-large'] . '" media="(min-width: 1800px)">
 							<source srcset="' . $post_banner['pz-banner-large'] . '" media="(min-width: 1200px)">

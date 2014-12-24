@@ -11,8 +11,25 @@ jQuery(document).ready(function($) {
 		$('picture').css('max-width', windowWidth);
 
 		// get current page
-		if($('section#home-slideshow').length != 0) {
-			currentPage = 'Homepage';
+		switch(true) {
+			case $('section#home-slideshow').length != 0:
+				currentPage = 'homepage';
+				break;
+			case $('section.articles-wrapper').length != 0:
+				currentPage = 'articles';
+				break;
+			case $('section.immigration-links-wrapper').length != 0:
+				currentPage = 'immigration-links';
+				break;
+			case $('section.us-immigration-wrapper').length != 0:
+				currentPage = 'us-immigration';
+				break;
+			case $('section.attorney-bio-wrapper').length != 0:
+				currentPage = 'attorney-bio';
+				break;
+			case $('section.contact-wrapper').length != 0:
+				currentPage = 'contact';
+				break;
 		}
 
 		return windowWidth, currentPage;
@@ -23,7 +40,7 @@ jQuery(document).ready(function($) {
 	/*
 	* homepage
 	*/
-	if(currentPage == 'Homepage') {
+	if(currentPage == 'homepage') {
 
 		// shortcuts interactivity
 		$('div#direction-shortcut, div#border-times-shortcut').on('click', function() {
@@ -61,17 +78,188 @@ jQuery(document).ready(function($) {
 		}, 2000);
 		
 	}
-	
+
 	/*
-	* top nav: display icon on hover
+	* contact
 	*/
-	$('li.nav-item')
-		.mouseenter(function() {
-			$(this).find('i').fadeIn(100);
-		})
-		.mouseleave(function() {
-			$(this).find('i').fadeOut(100);
-		});
+	if(currentPage == 'contact') {
+
+		
+
+		// resize google map height
+		if(windowWidth > 800) {
+			$('section.embedded-map').css('height', 350);
+		} else if(windowWidth < 800 && windowWidth > 500) {
+			$('section.embedded-map').css('height', 280);
+		} else if(windowWidth < 500) {
+			$('section.embedded-map').css('height', 200);
+		}
+
+
+		var map;
+		var vancouver = new google.maps.LatLng(49.279971, -123.124991);
+
+		var MY_MAPTYPE_ID = 'custom_style';
+
+		function initialize() {
+
+		  var featureOpts = [
+		    {
+		        "featureType": "administrative",
+		        "elementType": "labels.text.fill",
+		        "stylers": [
+		            {
+		                "color": "#444444"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "landscape",
+		        "elementType": "all",
+		        "stylers": [
+		            {
+		                "color": "#f2f2f2"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "poi",
+		        "elementType": "all",
+		        "stylers": [
+		            {
+		                "visibility": "off"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "poi.park",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "saturation": "-36"
+		            },
+		            {
+		                "lightness": "-6"
+		            },
+		            {
+		                "visibility": "on"
+		            },
+		            {
+		                "gamma": "1"
+		            },
+		            {
+		                "hue": "#00a4ff"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road",
+		        "elementType": "all",
+		        "stylers": [
+		            {
+		                "saturation": -100
+		            },
+		            {
+		                "lightness": 45
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "visibility": "on"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road.highway",
+		        "elementType": "all",
+		        "stylers": [
+		            {
+		                "visibility": "simplified"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road.highway",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "visibility": "on"
+		            },
+		            {
+		                "hue": "#ff0000"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road.arterial",
+		        "elementType": "labels.icon",
+		        "stylers": [
+		            {
+		                "visibility": "off"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "transit",
+		        "elementType": "all",
+		        "stylers": [
+		            {
+		                "visibility": "off"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "water",
+		        "elementType": "all",
+		        "stylers": [
+		            {
+		                "color": "#c2d6f1"
+		            },
+		            {
+		                "visibility": "on"
+		            }
+		        ]
+		    }
+			]
+
+		  var mapOptions = {
+		    zoom: 14,
+		    center: vancouver,
+		    mapTypeControlOptions: {
+		      mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
+		    },
+		    mapTypeId: MY_MAPTYPE_ID
+		  };
+
+		  map = new google.maps.Map(document.getElementById('page-banner'),
+		      mapOptions);
+
+		  var marker = new google.maps.Marker({
+		      position: new google.maps.LatLng(49.279971, -123.124991),
+		      map: map,
+		      title: 'Hello World!'
+		  });
+
+		  var styledMapOptions = {
+		    name: 'Custom Style'
+		  };
+
+		  var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
+
+		  map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
+		}
+
+		google.maps.event.addDomListener(window, 'load', initialize);
+	}
+
+	/*
+	* top nav: display icon on active page
+	*/
+	$('li.nav-item[data-page="' + currentPage + '"]').find('i').fadeIn(100);
 
 	/*
 	* hide reveal menu
@@ -99,6 +287,16 @@ jQuery(document).ready(function($) {
 			'-webkit-transition' 	: 'margin-left 0s',
 			'transition'					: 'margin-left 0s'
 		};
+
+		// resize map height on contact page
+		if(currentPage = 'contact') {
+			if(windowWidth < 800 && windowWidth > 500) {
+				$('section.embedded-map').css('height', 280);
+			} else if(windowWidth < 500) {
+				$('section.embedded-map').css('height', 200);
+			}
+		}
+		
 
 		var removeReset = {
 			'-webkit-transition' 	: 'margin-left 2s',
