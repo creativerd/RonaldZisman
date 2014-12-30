@@ -21,7 +21,9 @@
 			$as_post_thumb = get_field('article_thumbnail')['sizes'];
 
 			echo 		'<div class="img-col large-6 medium-6 small-6 columns">';
-			echo 				'<img src="' . $as_post_thumb['post-thumbnail'] . '">';
+			echo 				'<a href="' . $as_post_link . '">
+											<img src="' . $as_post_thumb['post-thumbnail'] . '">
+									</a>';
 			echo 		'</div>';
 
 			echo 		'<div class="info-col large-6 medium-6 small-6 columns">';

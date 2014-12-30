@@ -61,10 +61,8 @@
 		wp_reset_postdata();
 
 	} else {
-		echo '<section id="page-banner" class="embedded-map" style="heigth:350px;">';
-		//echo '<iframe id="google-map-embed" width="100%" height="350" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Vancouver%2C%20BC%20V6Z%202H2%2C%20Canada&key=AIzaSyDQzXKLtVBxSPWOL28XVOz2jxs3TeChoWQ"></iframe>';
-		echo '</section>';
-
+		// google map
+		echo '<section id="page-banner" class="embedded-map" style="heigth:350px;"></section>';
 	}
 	
 ?>

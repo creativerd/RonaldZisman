@@ -235,6 +235,13 @@ p strong {
 	color: black;
 }
 
+::selection {
+  background: #B8C8DB; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #B8C8DB; /* Gecko Browsers */
+}
+
 /*********
 * HEADER
 *********/
@@ -487,6 +494,14 @@ picture.home-img {
 
 @media only screen and (min-width : 320px) and (max-width : 680px) {
 
+	.slide-wrapper {
+		background-color: #000;
+	}
+
+	picture.home-img {
+		opacity: 0.7;
+	}
+
 	#home-shorcuts {
 		display: none;
 	}
@@ -630,7 +645,7 @@ a.go-to-article:hover, a.go-to-article>h4:hover {
  	padding-bottom: 60px;
  }
 
- p.article-date, p.article-extra-info, p.aside-post-info {
+ .main-post p.article-date, .main-post p.article-extra-info, .main-post p.aside-post-info {
  	font-family: 'HelveticaNeueW01-45Ligh' !important;
  	color: #5C5C5C;
  	font-size: 14px !important;
@@ -638,13 +653,18 @@ a.go-to-article:hover, a.go-to-article>h4:hover {
  	line-height: 1.3;
  }
 
- p.article-content, #bio-text p  {
+ p.aside-post-info {
+ 	margin-bottom: 3px;
+ }
+
+ p.article-content, #bio-text p, .main-post p  {
  	font-family: 'HelveticaNeueW01-55Roma' !important;
  	color: #5C5C5C;
  	font-size: 16px !important;
+ 	margin-bottom: 10px;
  }
 
-h2.article-title {
+h2.article-title, h2.contact-title {
 	font-family: 'HelveticaNeueW01-77BdCn_692722' !important;
 	font-size: 28px !important;
 	line-height: 1.3 !important;
@@ -654,6 +674,30 @@ h2.article-title {
 
 .article-head {
 	margin-bottom: 25px;
+}
+
+article.main-post h1, article.main-post h2, article.main-post h1, article.main-post h3 {
+	font-family: 'HelveticaNeueW01-77BdCn_692722' !important;
+	font-size: 28px !important;
+	line-height: 1.3 !important;
+	color: #1E2A3A;
+	margin-bottom: 10px !important;
+	margin-top: 0 !important;
+} 
+
+article.main-post h3, article.main-post h4, article.main-post h5, article.main-post h6 {
+	font-size: 24px !important;
+	color: #5C5C5B;
+	margin-top: 15px !important;
+	margin-bottom: 5px !important;
+}
+
+article.main-post h4, article.main-post h5, article.main-post h6 {
+	font-size: 21px !important;
+}
+
+article.main-post a {
+	text-decoration: underline;
 }
 
 aside#similar-posts {
@@ -825,8 +869,83 @@ p.aside-post-info:last-of-type {
 * CONTACT
 *********/
 
+.contact-wrapper {
+	padding-bottom: 80px!important;
+}
+
 #page-banner.embedded-map {
 	height: 350px;
+}
+
+h2.contact-title {
+	margin-bottom: 15px !important;
+}
+
+.find-us {
+	margin-bottom: 20px;
+}
+
+.find-us p {
+	margin-bottom: 7px;
+	line-height: 1.5;
+}
+
+#contact-name, #contact-email, #contact-message {
+	width: 100%;
+	line-height: 1.5 !important;
+	margin-bottom: 15px;
+	border: none;
+	background-color: #F3F3F3;
+	padding: 7px 0 7px 10px;
+	color: rgb(92, 92, 92);
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box; 
+}
+
+#contact-message {
+	height: 130px;
+}
+
+#contact-form input[type=submit] {
+	float: right;
+	top: -10px;
+	position: relative;
+	border: none;
+	color: white;
+	background-color: #1E2A3A;
+	width: 120px;
+	height: 30px;
+}
+
+#contact-form input[type=submit]:hover {
+	background-color: #197194;
+}
+
+.form-error {
+	color : #DF9499 !important;
+	line-height: 1.5 !important;
+}
+
+.email-sent {
+	width: 100%;
+	position: relative;
+	background-color: rgba(193, 219, 245, 0.9);
+	padding: 10px;
+	z-index: 9999;
+	margin-bottom: 15px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
+}
+
+
+@media only screen and (min-width : 320px) and (max-width : 600px) {
+
+	.find-us, .contact-us {
+		padding: 0!important;
+	}
+
 }
 
 /*********

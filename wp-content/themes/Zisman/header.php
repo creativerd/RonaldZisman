@@ -9,16 +9,41 @@
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
 <head>
+	<?php 
+	switch(true) {
+		case(is_home()):
+			$current_page = 8;
+			break;
+		case(is_post_type_archive('rz_articles')):
+			$current_page = 66;
+			break;
+		case('rz_immigration' == get_post_type()):
+			$current_page = 48;
+			break;
+		case('rz_us_immigration' == get_post_type()):
+			$current_page = 53;
+			break;
+		case('rz_contact' == get_post_type()):
+			$current_page = 56;
+			break;
+		default:
+			$current_page = $post->ID; 
+	}
+	
+	$meta_description = get_field('meta_page_description', $current_page);
+	$meta_title = get_field('meta_page_title', $current_page);
+	$meta_tags = get_field('meta_tags', $current_page);
+	?>
 	<meta charset="UTF-8">
+	<meta name="author" content="Ronald A. Zisman">
 	<meta name="viewport" content="width=device-width">
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
-	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
-	<![endif]-->
+	<meta name="description" content="<?php echo $meta_description; ?>">
+	<meta name="keywords" content="<?php echo $meta_tags; ?>">
+	<title><?php echo (!empty($meta_title)) ? $meta_title : get_the_title($current_page); ?></title>
 	<link rel="stylesheet" href="<?php echo TEMPLATEPATHIO; ?>/style.css" type="text-css" media="all">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-	
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
 	<?php wp_head(); ?>
 </head>
 

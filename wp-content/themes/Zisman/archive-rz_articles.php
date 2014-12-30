@@ -5,6 +5,7 @@
 <?php include(locate_template('archive-banner.php')); ?>
 
 <section id="content-wrapper" class="articles-wrapper">
+
 	<div class="row">
 	<?php 
 	$args = array(

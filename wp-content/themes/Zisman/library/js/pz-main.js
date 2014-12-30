@@ -73,9 +73,9 @@ jQuery(document).ready(function($) {
 			homeSlideshow.slide($this);
 		});	
 
-		setTimeout(function() {
-			homeSlideshow.autoSlide();
-		}, 2000);
+		//setTimeout(function() {
+		//	homeSlideshow.autoSlide();
+		//}, 2000);
 		
 	}
 
@@ -84,8 +84,7 @@ jQuery(document).ready(function($) {
 	*/
 	if(currentPage == 'contact') {
 
-		
-
+		// google map
 		// resize google map height
 		if(windowWidth > 800) {
 			$('section.embedded-map').css('height', 350);
@@ -94,7 +93,6 @@ jQuery(document).ready(function($) {
 		} else if(windowWidth < 500) {
 			$('section.embedded-map').css('height', 200);
 		}
-
 
 		var map;
 		var vancouver = new google.maps.LatLng(49.279971, -123.124991);
@@ -107,121 +105,75 @@ jQuery(document).ready(function($) {
 		    {
 		        "featureType": "administrative",
 		        "elementType": "labels.text.fill",
-		        "stylers": [
-		            {
-		                "color": "#444444"
-		            }
-		        ]
+		        "stylers": [{ "color": "#444444" }]
 		    },
 		    {
 		        "featureType": "landscape",
 		        "elementType": "all",
 		        "stylers": [
-		            {
-		                "color": "#f2f2f2"
-		            }
+		            { "color": "#f2f2f2" }
 		        ]
 		    },
 		    {
 		        "featureType": "poi",
 		        "elementType": "all",
 		        "stylers": [
-		            {
-		                "visibility": "off"
-		            }
+		            { "visibility": "off" }
 		        ]
 		    },
 		    {
 		        "featureType": "poi.park",
 		        "elementType": "geometry.fill",
 		        "stylers": [
-		            {
-		                "saturation": "-36"
-		            },
-		            {
-		                "lightness": "-6"
-		            },
-		            {
-		                "visibility": "on"
-		            },
-		            {
-		                "gamma": "1"
-		            },
-		            {
-		                "hue": "#00a4ff"
-		            }
+		            { "saturation": "-36" },
+		            { "lightness": "-6" },
+		            { "visibility": "on" },
+		            { "gamma": "1" },
+		            { "hue": "#00a4ff" }
 		        ]
 		    },
 		    {
 		        "featureType": "road",
 		        "elementType": "all",
 		        "stylers": [
-		            {
-		                "saturation": -100
-		            },
-		            {
-		                "lightness": 45
-		            }
+		            { "saturation": -100 },
+		            { "lightness": 45 }
 		        ]
 		    },
 		    {
 		        "featureType": "road",
 		        "elementType": "geometry.fill",
-		        "stylers": [
-		            {
-		                "visibility": "on"
-		            }
-		        ]
+		        "stylers": [{ "visibility": "on" }]
 		    },
 		    {
 		        "featureType": "road.highway",
 		        "elementType": "all",
-		        "stylers": [
-		            {
-		                "visibility": "simplified"
-		            }
-		        ]
+		        "stylers": [{ "visibility": "simplified" }]
 		    },
 		    {
 		        "featureType": "road.highway",
 		        "elementType": "geometry.fill",
 		        "stylers": [
-		            {
-		                "visibility": "on"
-		            },
-		            {
-		                "hue": "#ff0000"
-		            }
+		            { "visibility": "on" },
+		            { "hue": "#ff0000" }
 		        ]
 		    },
 		    {
 		        "featureType": "road.arterial",
 		        "elementType": "labels.icon",
-		        "stylers": [
-		            {
-		                "visibility": "off"
-		            }
-		        ]
+		        "stylers": [{ "visibility": "off" }]
 		    },
 		    {
 		        "featureType": "transit",
 		        "elementType": "all",
-		        "stylers": [
-		            {
-		                "visibility": "off"
-		            }
-		        ]
+		        "stylers": [{ "visibility": "off" }]
 		    },
 		    {
 		        "featureType": "water",
 		        "elementType": "all",
 		        "stylers": [
-		            {
-		                "color": "#c2d6f1"
-		            },
-		            {
-		                "visibility": "on"
-		            }
+		            { "color": "#c2d6f1" },
+		            { "visibility": "on" }
 		        ]
 		    }
 			]
@@ -252,8 +204,58 @@ jQuery(document).ready(function($) {
 
 		  map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
 		}
-
 		google.maps.event.addDomListener(window, 'load', initialize);
+
+		// form validation
+		$('form#contact-form').on('submit', function(ev) {
+
+			var form = $(this),
+			 		nameInput = form.find('input#contact-name'),
+			 		nameInputVal = nameInput.val().trim();
+			 		emailInput = form.find('input#contact-email'),
+			 		emailInputVal = emailInput.val().trim();
+			 		messageInput = form.find('textarea#contact-message'),
+			 		messageInputVal = messageInput.val().trim(),
+			 		formErrors = false;
+
+			if(nameInputVal == '' || nameInputVal == 'Please enter your name') {
+				console.log(nameInputVal);
+				nameInput.addClass('form-error');
+				nameInput.val('Please enter your name');
+				ev.preventDefault();
+
+				formErrors = true;
+			}
+
+			if(emailInputVal == '' || emailInputVal == 'Please enter your email address') {
+				emailInput.addClass('form-error');
+				emailInput.val('Please enter your email address');
+				ev.preventDefault();
+
+				formErrors = true;
+			}
+
+			if(messageInputVal == '' || messageInputVal == 'Please enter your message') {
+				messageInput.addClass('form-error');
+				messageInput.val('Please enter your message');
+				ev.preventDefault();
+
+				formErrors = true;
+			}
+
+			if(formErrors == false) {
+				console.log('sumbit');
+			}
+
+		});
+
+		$('input#contact-name, input#contact-email, textarea#contact-message').on('focus', function() {
+
+			var $this = $(this);
+			if($this.hasClass('form-error')) {
+				$this.removeClass('form-error').val('');
+			}
+		})
 	}
 
 	/*

@@ -120,6 +120,45 @@ function rz_articles_banner_post_type() {
 }
 add_action( 'init', 'rz_articles_banner_post_type' );
 
+/*
+* Articles SEO post type
+*/
+function rz_articles_SEO_post_type() {
+  $labels = array(
+    'name'              => 'Articles Page SEO',
+    'singular_name'     => 'Articles Page SEO',
+    'add_new'           => '',
+    'add_new_item'      => 'Add Articles Page SEO',
+    'edit_item'         => 'Edit Page SEO',
+    'new_item'          => 'New Articles Page SEO',
+    'all_items'         => 'Articles Page SEO',
+    'view_item'         => 'View Articles Page SEO',
+    'search_items'      => 'Search Articles Page SEO',
+    'not_found'         =>  'No Articles Page SEO found',
+    'not_found_in_trash' => 'No Articles Page SEO found in Trash', 
+    'parent_item_colon' => '',
+    'menu_name'         => 'Articles Page SEO'
+  );
+
+  $args = array(
+    'labels'                => $labels,
+    'public'                => true,
+    'publicly_queryable'    => true,
+    'show_ui'               => true, 
+    'show_in_menu'          => 'edit.php?post_type=rz_articles', 
+    'query_var'             => true,
+    'rewrite'               => array( 'slug' => 'articles-seo' ),
+    'capability_type'       => 'post',
+    'has_archive'           => true, 
+    'hierarchical'          => true,
+    'menu_position'         => null,
+    'supports'              => array( 'title' )
+  ); 
+
+  register_post_type( 'rz_articles_seo', $args );
+}
+add_action( 'init', 'rz_articles_SEO_post_type' );
+
 
 /**
  * Bio post type.
@@ -400,5 +439,44 @@ function rz_contact_post_type() {
 	register_post_type( 'rz_contact', $args );
 }
 add_action( 'init', 'rz_contact_post_type' );
+
+/*
+* Contact thumbnail post type
+*/
+function rz_contact_thumb_post_type() {
+  $labels = array(
+    'name'              => 'Contact Thumbnail Image',
+    'singular_name'     => 'Contact Thumbnail Image',
+    'add_new'           => '',
+    'add_new_item'      => 'Add Contact Thumbnail Image',
+    'edit_item'         => 'Edit Contact Thumbnail',
+    'new_item'          => 'New Contact Thumbnail Image',
+    'all_items'         => 'Contact Thumbnail Image',
+    'view_item'         => 'View Contact Thumbnail Image',
+    'search_items'      => 'Search Contact Thumbnail Image',
+    'not_found'         =>  'No Contact Thumbnail found',
+    'not_found_in_trash' => 'No Contact Thumbnail found in Trash', 
+    'parent_item_colon' => '',
+    'menu_name'         => 'Contact Thumbnail Image'
+  );
+
+  $args = array(
+    'labels'                => $labels,
+    'public'                => true,
+    'publicly_queryable'    => true,
+    'show_ui'               => true, 
+    'show_in_menu'          => 'edit.php?post_type=rz_contact', 
+    'query_var'             => true,
+    'rewrite'               => array( 'slug' => 'contact-thumb' ),
+    'capability_type'       => 'post',
+    'has_archive'           => true, 
+    'hierarchical'          => true,
+    'menu_position'         => null,
+    'supports'              => array( 'title' )
+  ); 
+
+  register_post_type( 'rz_contact_thumb', $args );
+}
+add_action( 'init', 'rz_contact_thumb_post_type' );
 
 ?>

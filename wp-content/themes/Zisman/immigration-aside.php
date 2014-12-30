@@ -12,7 +12,7 @@
 		echo '</div>';
 
 		echo '<div class="go-to-section">';
-		echo '<a href="' . WP_HOME . '/contact"><img src="' . get_field('banner_image', 35)['sizes']['medium'] . '" ></a>';
+		echo '<a href="' . WP_HOME . '/contact"><img src="' . get_field('banner_image', 59)['sizes']['medium'] . '" ></a>';
 		echo '<a href="' . WP_HOME . '/contact">Find Us</a>';
 		echo '</div>';
 	} else {
@@ -25,7 +25,7 @@
 		echo '<a href="' . WP_HOME . '/immigration-links">Immigration Links</a>';
 		echo '</div>';
 		echo '<div class="go-to-section">';
-		echo '<a href="' . WP_HOME . '/contact"><img src="' . get_field('banner_image', 35)['sizes']['medium'] . '" ></a>';
+		echo '<a href="' . WP_HOME . '/contact"><img src="' . get_field('banner_image', 59)['sizes']['medium'] . '" ></a>';
 		echo '<a href="' . WP_HOME . '/contact">Find Us</a>';
 		echo '</div>';
 	}

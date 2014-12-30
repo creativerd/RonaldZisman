@@ -45,6 +45,8 @@
 								<source srcset="<?php echo $img_obj['sizes']['pz-medium']; ?>" media="(min-width: 850px)">
 								<source srcset="<?php echo $img_obj['sizes']['pz-small']; ?>" media="(min-width: 500px)">
 								<source srcset="<?php echo $img_obj['sizes']['pz-mobile']; ?>" media="(min-width: 320px)">
+								<source srcset="<?php echo $img_obj['sizes']['pz-mobile']; ?>" media="(min-width: 321px)">
+									<source srcset="<?php echo $img_obj['sizes']['pz-mobile-portrait']; ?>" media="(max-width: 320px)">
 								<img srcset="<?php echo $img_obj['sizes']['pz-medium']; ?>" alt="Canadian mountains covered in snow">
 							</picture>
 							
