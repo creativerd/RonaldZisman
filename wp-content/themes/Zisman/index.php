@@ -39,7 +39,7 @@
 				if(!empty($title) && !empty($img_obj)) { ?>
 					<div class="slide-wrapper">
 
-							<picture class="home-img <?php echo $cl; ?>">
+							<picture class="home-img <?php echo $cl; ?>" data-indexslide="<?php echo $i - 1; ?>">
 								<source srcset="<?php echo $img_obj['sizes']['pz-extra-large']; ?>" media="(min-width: 1800px)">
 								<source srcset="<?php echo $img_obj['sizes']['pz-large']; ?>" media="(min-width: 1200px)">
 								<source srcset="<?php echo $img_obj['sizes']['pz-medium']; ?>" media="(min-width: 850px)">
@@ -72,9 +72,8 @@
 </section>
 
 <!--
-<span data-dir="prev">PREV</span>	
-<span style="float:right;" data-dir="next">NEXT</span>
-00>
+<span data-dir="prev" class="SLIDESHOW-NAVIGATOR">PREV</span>	
+<span style="float:right;" data-dir="next" class="SLIDESHOW-NAVIGATOR">NEXT</span>
 -->
 
 <!-- SHORTCUTS -->
