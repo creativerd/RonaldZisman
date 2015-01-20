@@ -23,6 +23,18 @@ font-family:"HelveticaNeueW01-55Roma";
 src:url("library/fonts/b7693a83-b861-4aa6-85e0-9ecf676bc4d6.eot?#iefix");
 src:url("library/fonts/b7693a83-b861-4aa6-85e0-9ecf676bc4d6.eot?#iefix") format("eot"),url("library/fonts/bcf54343-d033-41ee-bbd7-2b77df3fe7ba.woff") format("woff"),url("library/fonts/b0ffdcf0-26da-47fd-8485-20e4a40d4b7d.ttf") format("truetype"),url("library/fonts/da09f1f1-062a-45af-86e1-2bbdb3dd94f9.svg#da09f1f1-062a-45af-86e1-2bbdb3dd94f9") format("svg");
 }
+/*
+@font-face{
+font-family:"HelveticaNeueW01-47LtCn_692686";
+src:url("library/fonts/7de6b03f-1298-4bc2-89af-9d9da594008d.eot?#iefix");
+src:url("library/fonts/7de6b03f-1298-4bc2-89af-9d9da594008d.eot?#iefix") format("eot"),url("library/fonts/42aacb2f-222e-46f5-a95a-1c22948ee0d1.woff") format("woff"),url("library/fonts/217a2f81-1e65-4924-a0d4-05ac8576f883.ttf") format("truetype"),url("library/fonts/5405647d-099e-47f7-9d4a-f8692e57a206.svg#5405647d-099e-47f7-9d4a-f8692e57a206") format("svg");
+}
+*/
+@font-face{
+font-family:"HelveticaNeueW01-57Cn";
+src:url("library/fonts/ecaa98fe-425a-42de-846b-c235f0dbc449.eot?#iefix");
+src:url("library/fonts/ecaa98fe-425a-42de-846b-c235f0dbc449.eot?#iefix") format("eot"),url("library/fonts/842088d0-1ae2-40d0-8561-3c95761ba7a6.woff") format("woff"),url("library/fonts/c74505d5-13e8-47ed-94a8-630aab4da3e6.ttf") format("truetype"),url("library/fonts/6cd480d1-47d0-48b4-86bd-283db2cb9235.svg#6cd480d1-47d0-48b4-86bd-283db2cb9235") format("svg");
+}
 @font-face{
 font-family:"HelveticaNeueW01-77BdCn_692722";
 src:url("library/fonts/83d5bc89-af33-46a9-8fe3-15d87784f50e.eot?#iefix");
@@ -242,16 +254,56 @@ p strong {
   background: #B8C8DB; /* Gecko Browsers */
 }
 
+#borwserhappy {
+	display: none;
+	display: block\9;
+	height: 90px\9;
+  background-color: #ff5f3c\9;
+  margin: 0\9;
+  color: #FFFFFF\9 !important;
+  text-transform: uppercase\9;
+  padding: 40px\9;
+  text-align: center\9;
+}
+
+#borwserhappy p {
+	 color: #FFFFFF\9 !important;
+}
+
+.ie-7#browserhappy {
+	display: block !important;
+	height: 90px;
+  background-color: #ff5f3c;
+  margin: 0;
+  color: white;
+  text-transform: uppercase;
+  padding: 20px;
+  text-align: center;
+}
+
+.gmnoprint img {
+   max-width: none; 
+}
+
 /*********
 * HEADER
 *********/
 header {
 	background-color: #FFF;
 	height: auto;
-	padding: 30px;
+	padding: 20px 30px;
 	-webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;   
   box-sizing: border-box; 
+}
+
+#logo-strapline {
+	font-family: 'HelveticaNeueW01-57Cn', 'Helvetica-Neue', helvetica, Arial !important;
+	font-size: 18px;
+	margin-left: 2px;
+	margin-top: 2px;
+	position: relative;
+	display: block;
 }
 
 .header-cols {
@@ -259,19 +311,28 @@ header {
 }
 
 li.nav-item>a {
-	font-family: 'HelveticaNeueW01-45Ligh' !important;
+	font-family: 'HelveticaNeueW01-57Cn', 'Helvetica-Neue', helvetica, Arial !important;
+}
+header li.nav-item>a {
+	font-size: 18px;
 }
 
-li.nav-item>a>i {
+li.nav-item>a>img {
 	position: absolute;
-	margin-top: 4px;
-	left: -5px;
+	margin-top: 8px;
+	left: -2px;
 	color: #1E2A3A;
 	display: none;
 }
 
 #logo-header-a {
-	float: left
+	float: left;
+	color: #1E2A3A;
+}
+
+
+#logo-header:hover {
+	color: #1E2A3A !important;
 }
 
 #toggle-menu {
@@ -286,36 +347,49 @@ li.nav-item>a>i {
 
 #toggle-menu::before {
 	position: absolute;
-	top: 2px;
+	top: 4px;
 	right: 5px;
 	bottom: 5px;
 	left: 0;
+	background: #0A284B;
+	background: -webkit-linear-gradient(#CACAC9 18%, transparent 18%, transparent 41%, #CACAC9 41%, #CACAC9 59%, transparent 59%, transparent 82%, #CACAC9 82%);
+	background: -moz-gradient(#CACAC9 18%, transparent 18%, transparent 41%, #CACAC9 41%, #CACAC9 59%, transparent 59%, transparent 82%, #CACAC9 82%);
+	background: -o-gradient(#CACAC9 18%, transparent 18%, transparent 41%, #CACAC9 41%, #CACAC9 59%, transparent 59%, transparent 82%, #CACAC9 82%);
+	background: -ms-gradient(#CACAC9 18%, transparent 18%, transparent 41%, #CACAC9 41%, #CACAC9 59%, transparent 59%, transparent 82%, #CACAC9 82%);
 	background: linear-gradient(#CACAC9 18%, transparent 18%, transparent 41%, #CACAC9 41%, #CACAC9 59%, transparent 59%, transparent 82%, #CACAC9 82%);
 	content: '';
 }
 
 #toggle-menu.active::before {
 	position: absolute;
-	top: 2px;
+	top: 4px;
 	right: 5px;
 	bottom: 5px;
 	left: 0;
+	background: #0A284B;
+	background: -webkit-linear-gradient(#1E2A3A 18%, transparent 18%, transparent 41%, #1E2A3A 41%, #1E2A3A 59%, transparent 59%, transparent 82%, #1E2A3A 82%);
+	background: -moz-gradient(#1E2A3A 18%, transparent 18%, transparent 41%, #1E2A3A 41%, #1E2A3A 59%, transparent 59%, transparent 82%, #1E2A3A 82%);
+	background: -o-gradient(#1E2A3A 18%, transparent 18%, transparent 41%, #1E2A3A 41%, #1E2A3A 59%, transparent 59%, transparent 82%, #1E2A3A 82%);
+	background: -ms-gradient(#1E2A3A 18%, transparent 18%, transparent 41%, #1E2A3A 41%, #1E2A3A 59%, transparent 59%, transparent 82%, #1E2A3A 82%);
 	background: linear-gradient(#1E2A3A 18%, transparent 18%, transparent 41%, #1E2A3A 41%, #1E2A3A 59%, transparent 59%, transparent 82%, #1E2A3A 82%);
 	content: '';
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 640px) {
-	a#toggle-menu {
-		top: 0;
+@media only screen and (min-width : 800px) and (max-width : 900px) {
+	#logo-strapline {
+		font-size: 16px;
 	}
+}
 
-	a#toggle-menu::before, a#toggle-menu.active::before {
-		top: 4px;
-		right: 0px;
+@media only screen and (min-width : 730px) and (max-width : 799px) {
+	#logo-strapline {
+		font-size: 14px;
 	}
+}
 
-		i {
-		display: none !important;
+@media only screen and (min-width : 641px) and (max-width : 729px) {
+	#logo-strapline {
+		font-size: 13px;
 	}
 }
 
@@ -325,6 +399,10 @@ li.nav-item>a>i {
 		padding: 20px;
 	}
 
+	#logo-strapline {
+		font-size: 13px;
+	}
+
 	#toggle-menu {
 		display: block;
 	}
@@ -332,6 +410,19 @@ li.nav-item>a>i {
 	#header-nav-container{
 		margin-top: 20px;
 		display: none;
+	}
+
+	a#toggle-menu {
+		top: 6px;
+	}
+
+	a#toggle-menu::before, a#toggle-menu.active::before {
+		top: 4px;
+		right: 0px;
+	}
+
+	li.nav-item>a>img {
+		left: 0;
 	}
 }
 
@@ -376,11 +467,13 @@ section#home-slideshow img {
 
 .slide-info h1 {
 	color: #FFF !important;
+	font-family: 'HelveticaNeueW01-77BdCn_692722' !important;
+	font-size: 44px;
 }
 
 .slide-text-col {
 	float: right !important;
-	padding: 0 !important;
+	padding: 0 25px 0 0 !important;
 	color: #FFF !important;
 }
 
@@ -388,6 +481,8 @@ section#home-slideshow img {
 	font-family: 'HelveticaNeueW01-45Ligh' !important;
 	color: #FFF !important;
 	margin-bottom: 10px!important;
+	line-height: 1.4;
+	font-size: 14px;
 }
 
 .slide-p-text {
@@ -411,6 +506,10 @@ section#home-slideshow img {
 picture.home-img {
 	position: relative;
 	float: left;
+}
+
+picture.home-img img.slide-img-elem {
+	width: 100% !important;
 }
 
 .current-slide, .previous-slide, .next-slide{
@@ -437,8 +536,17 @@ picture.home-img {
 	float: left;
 }
 
+#direction-shortcut .shortcut-info a {
+	color: #1E2A3A;
+}
+
+#direction-shortcut .shortcut-info a:hover {
+	color: #FFF;
+} 
+
 .square-shortcut {
 	display: inline-block;
+	font-family: 'HelveticaNeueW01-57Cn', 'Helvetica-Neue', helvetica, Arial !important;
 	width: 60px;
 	height: 60px;
 	color: #fff;
@@ -447,12 +555,17 @@ picture.home-img {
 	text-align: center;
 }
 
+.square-shortcut>span {
+	font-family:  ;
+	clear: both;
+}
+
 #direction-shortcut .square-shortcut {
 	color: #1A2F6A;
 }
 
 .square-shortcut>img {
-	display: inline-block;
+	display: block;
 	margin: 7px auto 3px;
 } 
 
@@ -507,17 +620,20 @@ picture.home-img {
 	}
 
 	.slide-info {
-		padding: 20px;
+		padding: 12px 20px 20px;
 	}
 
-	.slide-info p {
-		font-size: 13px;
+	.slide-text-col h1 {
+		font-size: 30px;
 	}
-}
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 600px) {
-	.slide-info p {
-		font-size: 11px;
+	.slide-text-col p {
+		font-size: 13px !important;
+		line-height: 1.4 !important;
+	}
+
+	.slide-text-col {
+		padding: 5px 20px 20px 0 !important;
 	}
 }
 
@@ -536,6 +652,7 @@ h2#banner-title {
 	font-family: 'HelveticaNeueW01-77BdCn_692722';
 	font-size: 44px;
 }
+
 
 @media only screen and (min-width : 601px) and (max-width : 1000px) {
 	h2#banner-title {
@@ -564,6 +681,10 @@ h2#banner-title {
 
 #content-wrapper article {
 	min-height: 370px;
+}
+
+#content-wrapper article p {
+	margin-bottom: 0.75rem;
 }
 
 img.article-thumb {
@@ -601,17 +722,43 @@ a.go-to-article:hover, a.go-to-article>h4:hover {
 	color: #197194 !important;
 }
 
-@media only screen and (min-width : 601px) and (max-width : 1000px) {
+@media only screen and (min-width : 460px) and (max-width : 640px) {
+	.article-2-cols {
+		width: 49%!important
+	}
+	.article-2-cols:nth-of-type(even) {
+		margin-left: 1%!important
+	}
+	.article-2-cols:nth-of-type(odd) {
+		margin-right: 1%!important
+	}
+}
+
+@media only screen and (min-width : 811px) {
+	.article-3-cols {
+		width: 33%!important
+	}
+}
+
+
+@media only screen and (min-width : 701px) and (max-width : 1000px) {
 	#content-wrapper article {
 		margin-bottom: 20px;
-		min-height: 315px;
+		min-height: 334px;
+	}
+}
+
+@media only screen and (min-width : 601px) and (max-width : 700px) {
+	#content-wrapper article {
+		margin-bottom: 20px;
+		min-height: 306px;
 	}
 }
 
 @media only screen and (min-width : 320px) and (max-width : 600px) {
 
 	#content-wrapper {
-		padding: 30px 20px;
+		padding: 20px;
 	}
 
 	#content-wrapper article {
@@ -625,7 +772,7 @@ a.go-to-article:hover, a.go-to-article>h4:hover {
 		margin-top: -65px;
 		color: #FFF;
 		font-family: 'HelveticaNeueW01-77BdCn_692722';
-		font-size: 36px;
+		font-size: 30px;
 	}
 
 }
@@ -678,7 +825,7 @@ h2.article-title, h2.contact-title {
 
 article.main-post h1, article.main-post h2, article.main-post h1, article.main-post h3 {
 	font-family: 'HelveticaNeueW01-77BdCn_692722' !important;
-	font-size: 28px !important;
+	font-size: 26px !important;
 	line-height: 1.3 !important;
 	color: #1E2A3A;
 	margin-bottom: 10px !important;
@@ -686,7 +833,7 @@ article.main-post h1, article.main-post h2, article.main-post h1, article.main-p
 } 
 
 article.main-post h3, article.main-post h4, article.main-post h5, article.main-post h6 {
-	font-size: 24px !important;
+	font-size: 22px !important;
 	color: #5C5C5B;
 	margin-top: 15px !important;
 	margin-bottom: 5px !important;
@@ -780,6 +927,10 @@ p.aside-post-info:last-of-type {
 		padding-bottom: 30px;
 	}
 
+	 p.article-content, #bio-text p, .main-post p {
+	 	font-size: 15px !important;
+	 }
+
 	#similar-posts {
 		background-color: #F3F3F3;
 		padding-right: 15px;
@@ -824,7 +975,7 @@ p.aside-post-info:last-of-type {
 #content-wrapper.us-immigration-wrapper h3, #content-wrapper.immigration-links-wrapper h3 {
 	font-family: 'HelveticaNeueW01-77BdCn_692722' !important;
 	color: #1E2A3A;
-	font-size: 28px !important;
+	font-size: 21px !important;
 	line-height: 1.3 !important;
 	margin: 0 0 2px !important;
 }
@@ -857,7 +1008,7 @@ p.aside-post-info:last-of-type {
 @media only screen and (min-width : 320px) and (max-width : 600px) {
 
 	#content-wrapper.us-immigration-wrapper, #content-wrapper.immigration-links-wrapper {
-		padding: 30px 0 0;
+		padding: 20px 0 0;
 	}
 
 	article#immigration-link-content {
@@ -879,7 +1030,7 @@ p.aside-post-info:last-of-type {
 }
 
 #page-banner.embedded-map {
-	height: 350px;
+	height: 300px;
 }
 
 h2.contact-title {
@@ -913,7 +1064,7 @@ h2.contact-title {
 }
 
 #contact-form input[type=submit] {
-	float: right;
+	float: left;
 	top: -10px;
 	position: relative;
 	border: none;
@@ -947,6 +1098,10 @@ h2.contact-title {
 
 @media only screen and (min-width : 320px) and (max-width : 600px) {
 
+	h2.article-title, h2.contact-title {
+		margin-bottom: 10px!important;
+	}
+
 	.find-us, .contact-us {
 		padding: 0!important;
 	}
@@ -965,12 +1120,20 @@ footer {
 	font-family: 'HelveticaNeueW01-45Ligh' !important;
 }
 
+footer.home-footer {
+	background-color: #FFF;
+}
+
 .footer-cols {
 	padding: 0!important;
 }
 
-footer p, footer li {
-	font-size: 11px;
+footer p {
+	font-size: 13px !important;
+}
+
+footer li {
+	font-size: 14px !important;
 }
 
 footer li {
@@ -978,6 +1141,10 @@ footer li {
 }
 
 @media only screen and (min-width : 320px) and (max-width : 600px) {
+	p {
+		font-size: 15px !important;
+	}
+
 	footer {
 		padding: 15px 20px;
 	}
@@ -988,14 +1155,11 @@ footer li {
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 600px) {
+	footer {
+		min-height: 60px;
+	}
+
 	footer p{
 		font-size: 9px;
 	}
 }
-
-
-
-
-
-
-

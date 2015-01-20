@@ -72,8 +72,8 @@
 </section>
 
 
-<span data-dir="prev" class="SLIDESHOW-NAVIGATOR">PREV</span>	
-<span style="float:right;" data-dir="next" class="SLIDESHOW-NAVIGATOR">NEXT</span>
+<span data-dir="prev" class="slide-nav">PREV</span>	
+<span style="float:right;" data-dir="next" class="slide-nav">NEXT</span>
 
 
 <!-- SHORTCUTS -->

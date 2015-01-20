@@ -10,6 +10,7 @@
 <!--<![endif]-->
 <head>
 	<?php 
+
 	switch(true) {
 		case(is_home()):
 			$current_page = 8;
@@ -35,16 +36,19 @@
 	$meta_tags = get_field('meta_tags', $current_page);
 	?>
 	<meta charset="UTF-8">
-	<meta name="author" content="Ronald A. Zisman">
-	<meta name="viewport" content="width=device-width">
-	<meta name="description" content="<?php echo $meta_description; ?>">
-	<meta name="keywords" content="<?php echo $meta_tags; ?>">
+	<meta name="author" content="Ronald A. Zisman" />
+	<meta name="viewport" content="width=device-width" />
+	<meta name="description" content="<?php echo $meta_description; ?>" />
+	<meta name="keywords" content="<?php echo $meta_tags; ?>" />
 	<title><?php echo (!empty($meta_title)) ? $meta_title : get_the_title($current_page); ?></title>
-	<link rel="stylesheet" href="<?php echo TEMPLATEPATHIO; ?>/style.css" type="text-css" media="all">
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="<?php echo TEMPLATEPATHIO; ?>/style.css" type="text/css" media="all" />
+	<!--[if IE 7]>
+   <link rel="stylesheet" type="text/css" href="<?php echo TEMPLATEPATHIO; ?>/libarary/css/ie.css" />
+ <![endif]-->
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
 	<?php wp_head(); ?>
+
 </head>
 
 <body>
@@ -55,7 +59,8 @@
 			<div class="header-cols large-7 medium-6 small-12 columns">
 				<div class="row">
 					<a id="logo-header-a" class="small-8 columns" href="<?php echo WP_HOME; ?>" >
-						<img src="<?php echo TEMPLATEPATHIO; ?>/library/images/Zisman-logo.svg" title="Ronald Zisman" alt="Ronald Zisman logo">
+						<img src="<?php echo TEMPLATEPATHIO; ?>/library/images/zisman-logo.svg" title="Ronald Zisman" alt="Ronald Zisman logo" />
+						<span id="logo-strapline">U.S. Business Immigration Lawyers</span>
 					</a>
 					<div class="small-3 columns"></div>
 					<a id="toggle-menu" class="small-1 columns" href="#">
@@ -70,13 +75,13 @@
 					<div class="large-6 medium-6 small-12 columns">
 						<ul>
 							<li class="nav-item" data-page="homepage">
-								<a href="<?php echo WP_HOME; ?>"><i class="fa fa-star"></i>Home</a>
+								<a href="<?php echo WP_HOME; ?>/home"><img src="<?php echo TEMPLATEPATHIO; ?>/library/images/star-menu.png" class="fa fa-star" />Home</a>
 							</li>
 							<li class="nav-item" data-page="attorney-bio">
-								<a href="<?php echo WP_HOME; ?>/bio"><i class="fa fa-star"></i>Attorney Bio</a>
+								<a href="<?php echo WP_HOME; ?>/bio"><img src="<?php echo TEMPLATEPATHIO; ?>/library/images/star-menu.png" class="fa fa-star" />Attorney Bio</a>
 							</li>
 							<li class="nav-item" data-page="us-immigration">
-								<a href="<?php echo WP_HOME; ?>/us-immigration"><i class="fa fa-star"></i>U.S. Immigration</a>
+								<a href="<?php echo WP_HOME; ?>/us-immigration"><img src="<?php echo TEMPLATEPATHIO; ?>/library/images/star-menu.png" class="fa fa-star" />U.S. Immigration</a>
 							</li>
 						</ul>
 					</div>
@@ -84,13 +89,13 @@
 					<div class="large-6 medium-6 small-12 columns">
 						<ul>
 							<li class="nav-item" data-page="articles">
-								<a href="<?php echo WP_HOME; ?>/articles"><i class="fa fa-star"></i>Articles</a>
+								<a href="<?php echo WP_HOME; ?>/articles"><img src="<?php echo TEMPLATEPATHIO; ?>/library/images/star-menu.png" class="fa fa-star" />Articles</a>
 							</li>
 							<li class="nav-item" data-page="immigration-links">
-								<a href="<?php echo WP_HOME; ?>/immigration-links"><i class="fa fa-star"></i>Immigration Links</a>
+								<a href="<?php echo WP_HOME; ?>/immigration-links"><img src="<?php echo TEMPLATEPATHIO; ?>/library/images/star-menu.png" class="fa fa-star" />Immigration Links</a>
 							</li>
 							<li class="nav-item" data-page="contact">
-								<a href="<?php echo WP_HOME; ?>/contact"><i class="fa fa-star"></i>Contact</a>
+								<a href="<?php echo WP_HOME; ?>/contact"><img src="<?php echo TEMPLATEPATHIO; ?>/library/images/star-menu.png" class="fa fa-star" />Contact</a>
 							</li>
 						</ul>
 					</div>
@@ -99,3 +104,6 @@
 		</div>
 	</header>
 
+	<div id="borwserhappy">
+  <p>You are using an outdated browser. Please <a href="http://browsehappy.com/?locale=en">upgrade your browser</a> to improve your experience.</p>
+	</div>
