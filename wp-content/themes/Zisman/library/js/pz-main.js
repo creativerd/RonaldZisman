@@ -50,7 +50,7 @@ jQuery(document).ready(function($) {
 		// set up slides
 		var slides = $('picture.home-img'),
 		slideLength = slides.length;
-		//$('.previous-slide').css('margin-left', -WINDOWWIDTH).parent().insertBefore($('.current-slide').parent());
+		$('.previous-slide').css('margin-left', -WINDOWWIDTH).parent().insertBefore($('.current-slide').parent());
 	
 		// add dots to slides
 		slides.each(function(index) {	
